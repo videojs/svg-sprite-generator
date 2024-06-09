@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>SVG &lt;symbol&gt; sprite preview | svg-sprite</title>
+  <style>
+    body {
+      margin: 0;
+      background: #fafafa;
+      padding: 0;
+      line-height: 1.4;
+      color: #666;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1em;
+    }
+
+    header {
+      display: block;
+      background-color: #fff;
+      padding: 3em 3em 2em;
+      text-align: center;
+    }
+
+    header p {
+      margin: .75em 0 0;
+      font-size: 1.25em;
+    }
+
+    header code {
+      border-radius: .25em;
+      background: #666;
+      padding: .25em .5em;
+      color: white;
+    }
+
+    section {
+      border-top: 1px solid #eee;
+      padding: 2em;
+    }
+
+    section ul {
+      gap: 1em;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+    }
+
+    section li {
+      border-radius: .5em;
+      box-shadow: 0px 0px 6px #eee;
+      background-color: #fff;
+      cursor: default;
+      padding: 1em;
+      width: 10em;
+      text-align: center;
+    }
+
+    .icon-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: .25em;
+      background: #ccc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cpath fill='%23fff' d='M6 0h6v6H6zM0 6h6v6H0z'/%3E%3C/svg%3E") top left repeat;
+      padding: 1em 0;
+      height: 4em;
+    }
+
+    .icon {
+      display: inline-block;
+    }
+
+    svg {
+      width: 1em;
+      height: 1em;
+      font-size: 50px;
+    }
+
+    h1 {
+      gap: .5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0;
+    }
+
+    h2 {
+      margin: 1em 0 0 0;
+      font-size: 1em;
+      font-weight: 400;
+    }
+
+    img {
+      height: 2em;
+    }
+
+    footer {
+      display: block;
+      margin: 0;
+      padding: 0 3em 3em;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: .7em;
+    }
+
+    footer a {
+      margin-left: 0;
+      color: #0f7595;
+    }
+  </style>
+
+</head>
+
+<body>
+  <svg width="0" height="0" style="position:absolute">
+    {{#shapes}} {{{svg}}}
+    {{/shapes}}
+  </svg>
+
+  <header>
+    <h1><img src="https://avatars.githubusercontent.com/u/3287189?s=200&v=4" title="Video.js"> SVG icons preview</h1>
+    <p>All icons prefixed by <code>vjs-icon-</code></p>
+  </header>
+  <section>
+    <ul>
+      {{#shapes}}
+      <li title="{{name}}">
+        <div class="icon-box">
+          <svg>
+            <use xlink:href="#{{name}}"></use>
+          </svg>
+        </div>
+        <h2>{{name}}</h2>
+      </li>
+      {{/shapes}}
+    </ul>
+  </section>
+
+  <footer>
+    <p>Generated at {{date}} by <a href="https://github.com/amtins/svg-sprite-generator " target="_blank"
+        rel="noopener noreferrer">amtins/svg-sprite-generator</a>.</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('ul h2').forEach(
+      (el) => el.textContent = el.textContent.substring(9)
+    )
+  </script>
+</body>
+
+</html>
