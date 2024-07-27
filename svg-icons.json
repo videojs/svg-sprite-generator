@@ -1,6 +1,6 @@
 {
   "root-dir": "icons",
-  "output-dir": "vjs-svg-sprite",
+  "output-dir": "dist",
   "icons": {
     "audio-description": "audio-description.svg",
     "audio": "audio.svg",
