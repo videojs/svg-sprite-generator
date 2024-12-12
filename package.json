@@ -2,7 +2,7 @@
   "name": "@videojs/svg-sprite-generator",
   "version": "1.0.0",
   "description": "Effortlessly customize Video.js player icons",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "author": {
     "name": "amtins",
     "email": "amtins.dev@gmail.com",
