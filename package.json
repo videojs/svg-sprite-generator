@@ -15,6 +15,7 @@
   "scripts": {
     "build": "node index.js",
     "prestart": "npm run build",
+    "lint": "vjsstandard",
     "start": "http-server -c-1 -o vjs-svg-sprite"
   },
   "keywords": [
@@ -29,6 +30,7 @@
     "svgo": "^3.0.3"
   },
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "videojs-standard": "^9.1.0"
   }
 }
