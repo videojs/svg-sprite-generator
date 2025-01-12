@@ -49,4 +49,4 @@ export default {
     'volume-medium': '',
     'volume-mute': ''
   }
-}
+};
