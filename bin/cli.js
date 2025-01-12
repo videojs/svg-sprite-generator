@@ -7,10 +7,11 @@ import fs from 'fs';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { generateSvgSprite, parseConfigFile } from '../src/vjs-sprite.js';
-import svgConfigTemplate from "../template/svg.config.file.js";
+import svgConfigTemplate from '../template/svg.config.file.js';
 
+// eslint-disable-next-line no-unused-expressions
 yargs(hideBin(process.argv))
-  .scriptName("vjs-svg-sprite")
+  .scriptName('vjs-svg-sprite')
   .usage('$0 <command> [argument]')
 
   .command({
@@ -20,12 +21,13 @@ yargs(hideBin(process.argv))
       configFile: {
         type: 'string',
         describe: 'the config file used to build the svg sprite',
-        default: 'vjs-icons-config.json',
-      },
+        default: 'vjs-icons-config.json'
+      }
     },
     handler: (argv) => {
       const configFile = path.join(process.cwd(), argv.configFile);
       const configTemplate = JSON.stringify(svgConfigTemplate, null, 2);
+
       fs.writeFileSync(configFile, configTemplate);
     }
   })
@@ -55,23 +57,23 @@ yargs(hideBin(process.argv))
         type: 'boolean',
         default: false,
         describe: 'activate the debug mode'
-      },
+      }
     },
     handler: (argv) => {
       if (argv.svgSpriteConfigFile) {
-        console.log('svgSpriteConfigFile is not implemented yet')
+        throw new Error('svgSpriteConfigFile is not implemented yet');
       }
 
       if (argv.svgoConfigFile) {
-        console.log('svgoConfigFile is not implemented yet')
+        throw new Error('svgoConfigFile is not implemented yet');
       }
 
       if (argv.svgoCleanSpriteConfigFile) {
-        console.log('svgoCleanSpriteConfigFile is not implemented yet')
+        throw new Error('svgoCleanSpriteConfigFile is not implemented yet');
       }
 
       if (argv.debug) {
-        console.log('debug is not implemented yet')
+        throw new Error('debug is not implemented yet');
       }
 
       const configFile = path.join(process.cwd(), argv.configFile);
