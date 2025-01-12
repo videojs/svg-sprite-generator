@@ -16,7 +16,7 @@
     "build": "node index.js",
     "prestart": "npm run build",
     "prepare": "husky || true",
-    "lint": "vjsstandard",
+    "lint": "vjsstandard --errors",
     "start": "http-server -c-1 -o vjs-svg-sprite"
   },
   "keywords": [
