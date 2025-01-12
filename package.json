@@ -15,6 +15,7 @@
   "scripts": {
     "build": "node index.js",
     "prestart": "npm run build",
+    "prepare": "husky || true",
     "lint": "vjsstandard",
     "start": "http-server -c-1 -o vjs-svg-sprite"
   },
@@ -31,6 +32,7 @@
   },
   "devDependencies": {
     "http-server": "^14.1.1",
+    "husky": "^9.1.7",
     "videojs-standard": "^9.1.0"
   }
 }
