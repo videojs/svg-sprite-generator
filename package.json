@@ -34,5 +34,10 @@
     "http-server": "^14.1.1",
     "husky": "^9.1.7",
     "videojs-standard": "^9.1.0"
+  },
+  "vjsstandard": {
+    "ignore": [
+      "src/svg-sprite.config.js"
+    ]
   }
 }
