@@ -7,8 +7,8 @@ export default {
           'xmlns',
           'xmlns.xlink',
           'style'
-        ],
-      },
+        ]
+      }
     },
     {
       name: 'addAttributesToSVGElement',
@@ -23,5 +23,5 @@ export default {
         ]
       }
     }
-  ],
+  ]
 };
