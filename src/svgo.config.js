@@ -1,7 +1,7 @@
 export default {
   js2svg: {
     indent: 2,
-    pretty: true,
+    pretty: true
   },
   plugins: [
     'removeXMLProcInst',
@@ -17,8 +17,8 @@ export default {
           'stroke-width',
           'fill-rule',
           'style'
-        ],
-      },
+        ]
+      }
     },
     'removeUselessStrokeAndFill',
     'removeDimensions',
@@ -31,6 +31,6 @@ export default {
     'collapseGroups',
     'convertPathData',
     'convertTransform',
-    'mergePaths',
-  ],
+    'mergePaths'
+  ]
 };
