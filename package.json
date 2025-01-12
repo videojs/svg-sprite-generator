@@ -1,0 +1,43 @@
+{
+  "name": "@videojs/svg-sprite-generator",
+  "version": "1.0.0",
+  "description": "Effortlessly customize Video.js player icons",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "amtins",
+    "email": "amtins.dev@gmail.com",
+    "url": "https://github.com/amtins"
+  },
+  "type": "module",
+  "bin": {
+    "vjs-svg-sprite": "./bin/cli.js"
+  },
+  "scripts": {
+    "build": "node index.js",
+    "prestart": "npm run build",
+    "prepare": "husky || true",
+    "lint": "vjsstandard --errors",
+    "start": "http-server -c-1 -o dist"
+  },
+  "keywords": [
+    "svg",
+    "sprite",
+    "icons",
+    "player",
+    "video.js"
+  ],
+  "dependencies": {
+    "svg-sprite": "^2.0.2",
+    "svgo": "^3.0.3"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "husky": "^9.1.7",
+    "videojs-standard": "^9.1.0"
+  },
+  "vjsstandard": {
+    "ignore": [
+      "src/svg-sprite.config.js"
+    ]
+  }
+}
